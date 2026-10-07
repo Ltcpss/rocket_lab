@@ -1,0 +1,14 @@
+# Dados e planilhas
+*.csv
+*.tsv
+*.xlsx
+
+# Compactados
+*.zip
+
+# Bancos de dados
+*.db
+
+# Outros
+.env
+*.log
