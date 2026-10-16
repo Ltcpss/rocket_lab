@@ -1,0 +1,22 @@
+resources:
+  jobs:
+    New_Job_2026_10_16_15_13_53:
+      name: New Job 2026-10-16 15:13:53
+      schedule:
+        quartz_cron_expression: 28 0 19 * * ?
+        timezone_id: America/Sao_Paulo
+        pause_status: UNPAUSED
+      tasks:
+        - task_key: To_Bronze
+          notebook_task:
+            notebook_path: /Workspace/Users/lelepessoahp2013@gmail.com/rocket_lab/3-Orquestração/01_Landing_to_Bronze
+            source: WORKSPACE
+        - task_key: To_Silver
+          depends_on:
+            - task_key: To_Bronze
+          notebook_task:
+            notebook_path: /Workspace/Users/lelepessoahp2013@gmail.com/rocket_lab/3-Orquestração/02_Bronze_to_Silver
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
