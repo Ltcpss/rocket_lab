@@ -17,6 +17,12 @@ resources:
           notebook_task:
             notebook_path: /Workspace/Users/lelepessoahp2013@gmail.com/rocket_lab/3-Orquestração/02_Bronze_to_Silver
             source: WORKSPACE
+        - task_key: To_Gold
+          depends_on:
+            - task_key: To_Silver
+          notebook_task:
+            notebook_path: /Workspace/Users/lelepessoahp2013@gmail.com/rocket_lab/3-Orquestração/03_Silver_to_Gold
+            source: WORKSPACE
       queue:
         enabled: true
       performance_target: PERFORMANCE_OPTIMIZED
